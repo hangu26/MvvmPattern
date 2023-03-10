@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmpattern.R
 import com.example.mvvmpattern.model.TodoModel
 import com.example.mvvmpattern.view.adapter.TodoListAdapter
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         initRecyclerView()
+
+        initAddButton()
     }
 
     private fun initRecyclerView(){
@@ -36,4 +39,15 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun initAddButton(){
+        btn_add_todo.setOnClickListener {
+            openAddTodoDialog()
+        }
+    }
+
+    private fun openAddTodoDialog(){
+
+    }
+
 }

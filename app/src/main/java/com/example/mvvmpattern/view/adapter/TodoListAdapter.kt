@@ -21,4 +21,9 @@ class TodoListAdapter(val todoItems : ArrayList<TodoModel>): RecyclerView.Adapte
     override fun getItemCount(): Int {
         return todoItems.size
     }
+
+    fun addItem(todoModel: TodoModel){
+        todoItems.add(todoModel)
+    }
+
 }

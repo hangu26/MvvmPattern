@@ -5,6 +5,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvmpattern.R
 import com.example.mvvmpattern.model.TodoModel
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TodoViewHolder(view : View) : RecyclerView.ViewHolder(view) {
 
@@ -15,6 +17,12 @@ class TodoViewHolder(view : View) : RecyclerView.ViewHolder(view) {
     fun bind(todoModel : TodoModel){
         title.text = todoModel.title
         description.text = todoModel.description
-        createdDate.text = ("yyyy.MM.dd HH:")
+        createdDate.text = todoModel.createdData.toDateString("yyyy.MM.dd HH:mm")
     }
+
+    fun Long.toDateString(format: String) : String{
+        val simpleDateFormat = SimpleDateFormat(format)
+        return simpleDateFormat.format((Date(this)))
+    }
+
 }//pr 첫번째
